@@ -1,0 +1,22 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "{759A6D0C-4F4F-7C7E-193A-BCA6E7F79DFA}",
+	"Category": "",
+	"Description": "",
+	"Modules": [
+		{
+			"Name": "FPS_Project",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "ModelingToolsEditorMode",
+			"Enabled": true,
+			"TargetAllowList": [
+				"Editor"
+			]
+		}
+	]
+}
