@@ -26,13 +26,16 @@ AMentalShot::AMentalShot()
 	mProjectileMovementComp->MaxSpeed = 0.f;
 	mForceComponent = CreateDefaultSubobject<URadialForceComponent>(TEXT("ForceComp"));
 	mForceComponent->SetupAttachment(mCollisionComp);
+	mForceComponent->RemoveObjectTypeToAffect(EObjectTypeQuery::ObjectTypeQuery1);
 	mForceComponent->bIgnoreOwningActor = true;
+	mForceComponent->bAutoActivate = false;
 	InitialLifeSpan = 0.3f;
 }
 
 void AMentalShot::BeginPlay()
 {
 	Super::BeginPlay();
+	mForceComponent->Activate();
 }
 
 void AMentalShot::PostInitializeComponents()
