@@ -76,6 +76,7 @@ void AFPS_ProjectCharacter::SetupPlayerInputComponent(class UInputComponent* Pla
 		EnhancedInputComponent->BindAction(SprintAction, ETriggerEvent::Completed, this,
 		                                   &AFPS_ProjectCharacter::StopSprinting);
 		EnhancedInputComponent->BindAction(DashAction, ETriggerEvent::Started, this, &AFPS_ProjectCharacter::OnDash);
+		EnhancedInputComponent->BindAction(AbilityAction, ETriggerEvent::Started, this, &AFPS_ProjectCharacter::OnAbility);
 	}
 }
 
@@ -93,6 +94,12 @@ void AFPS_ProjectCharacter::OnDash()
 {
 	mActionComponent->StartAction(this, "Dash");
 	mActionComponent->StopAction(this, "Dash");
+}
+
+void AFPS_ProjectCharacter::OnAbility()
+{
+	mActionComponent->StartAction(this, "Ability");
+	mActionComponent->StopAction(this, "Ability");
 }
 
 void AFPS_ProjectCharacter::Move(const FInputActionValue& Value)

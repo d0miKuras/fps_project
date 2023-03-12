@@ -38,6 +38,9 @@ class AFPS_ProjectCharacter : public ACharacter
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
 	class UInputAction* DashAction;
+	
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = Input, meta = (AllowPrivateAccess = "true"))
+	class UInputAction* AbilityAction;
 
 	UPROPERTY(EditAnywhere, Category = "Actions")
 	class UActionComponent* mActionComponent;
@@ -56,6 +59,7 @@ protected:
 	void StartSprinting();
 	void StopSprinting();
 	void OnDash();
+	void OnAbility();
 	// APawn interface
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
